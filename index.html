@@ -8,53 +8,37 @@
 
 
 <center>
- <!doctype html>
-<html lang="en">
-<head>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/video.js/7.14.3/video-js.css" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/video.js/7.14.3/video.min.js"></script>
-    <script src="https://player.live-video.net/1.8.0/amazon-ivs-videojs-tech.min.js"></script>
-</head>
+ <script type="text/javascript" src="https://cdn.jsdelivr.net/clappr/latest/clappr.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/clappr.level-selector/latest/level-selector.min.js"></script>
 
-<body>
-    <div class="video-container">
-        <video id="amazon-ivs-videojs" class="video-js vjs-4-3 vjs-big-play-centered" controls autoplay playsinline></video>
-    </div>
-    <style>
-        body {
-            margin: 0;
-        }
+  <div id="player"></div>
 
-        .video-container {
-            width: 100%;
-            height: 480px;
-            margin: 15px;
-        }
-    </style>
-    <script>
-        (function play() {
-            // Get playback URL from Amazon IVS API
-            var PLAYBACK_URL = 'https://liv-bd.sonyplex.net/MDE0GIDU6R/gtv.stream/chunks.m3u8';
-            
-            // Register Amazon IVS as playback technology for Video.js
-            registerIVSTech(videojs);
+<script>
+	
+var playerElement = document.getElementById("player");
+var player = new Clappr.Player({
+      mediacontrol: {
+      seekbar: "#567",
+      buttons: "#567"
+      },
+ height: "300",
+ width: "300",
+autoPlay:false,
+  plugins: {
+    'core': [LevelSelector]
+    },
+	xhrSetup: function(xhr, url) {
+		xhr.withCredentials = false;
+	}
+});
+player.attachTo(playerElement);
+player.load({source: 'https://liv-bd.sonyplex.net/MDE0GIDU6R/gtv.stream/chunks.m3u8', mimeType: ''});player.play();
 
-            // Initialize player
-            var player = videojs('amazon-ivs-videojs', {
-               techOrder: ["AmazonIVS"]
-            }, () => {
-               console.log('Player is ready to use!');
-               // Play stream
-               player.src(PLAYBACK_URL);
-            });
-        })();
-    </script>
-</body>
-</html> 
+</script>
  </center>
 
 
-                                  PLAYER 2
+                                 
 
 
 
