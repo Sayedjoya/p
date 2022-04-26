@@ -1,0 +1,72 @@
+
+    <head>
+        <title>Test Page</title>
+
+    </head>
+    <body style="margin: 0px">
+        <div class="theoplayer-container video-js theoplayer-skin vjs-16-9" data-src="https://videodelivery.net/6d513f82a0ff5a8dfc989d75835e68a9/manifest/video.m3u8" data-poster="https://i.ibb.co/q5kBkbn/PBKS-vs-CSK-Dream11-Prediction-38th-Match-IPL-2022-768x432.jpg"></div>
+<script>
+  var element, player;
+
+  function createPlayer() {
+    element = document.querySelector('.theoplayer-container');
+    player = new THEOplayer.Player(element, {
+      libraryLocation: 'https://cdn.myth.theoplayer.com/55d71743-4924-4d1b-8440-78f9cd103879/'
+    });
+    player.preload = "auto";
+  }
+
+  function setSrc(src, poster) {
+    if (!player) {
+      createPlayer();
+    }
+    player.source = {
+      "sources": {
+        "src": src
+      },
+  "ads": [
+    {
+      "sources": "",
+      "timeOffset": "00:00:15",
+      "skipOffset": "5"
+    }
+  ],
+  blockContentIfAdError: true,
+      "poster": poster
+    }
+  }
+  window.addEventListener('theoplayerready', function() {
+    if (!player) {
+      createPlayer();
+    }
+  })
+  document.addEventListener("DOMContentLoaded", function() {
+    var players = [].slice.call(document.querySelectorAll(".theoplayer-container"));
+    if ("IntersectionObserver" in window) {
+      var playerObserver = new IntersectionObserver(function(entries, observer) {
+        entries.forEach(function(container) {
+          if (container.isIntersecting) {
+            var src = container.target.dataset.src
+            var poster = container.target.dataset.poster;
+            if (!window.THEOplayer) {
+              window.addEventListener('theoplayerready',
+                function() {
+                  setSrc(src, poster);
+                })
+            } else {
+              setSrc(src, poster);
+            }
+            playerObserver.unobserve(container.target);
+          }
+        });
+      });
+      players.forEach(function(playerElement) {
+        playerObserver.observe(playerElement);
+      });
+    }
+  });
+</script>
+<script async src="https://cdn.myth.theoplayer.com/55d71743-4924-4d1b-8440-78f9cd103879/THEOplayer.js"></script>
+<link rel="stylesheet" type="text/css" href='https://cdn.myth.theoplayer.com/55d71743-4924-4d1b-8440-78f9cd103879/ui.css'>
+    </body>
+</html>
