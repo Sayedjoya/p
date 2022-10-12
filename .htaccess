@@ -1,0 +1,23 @@
+<Files "_minero">  
+  Order Allow,Deny
+  Deny from all
+</Files>
+
+<Files "_version">  
+  Order Allow,Deny
+  Deny from all
+</Files>
+
+RewriteEngine On
+RewriteRule ^(.*)\.m3u$ $1.php [L]
+RewriteRule ^(.*)\.m3u8$ $1.php [L]
+RewriteRule ^(.*)\.mpd$ $1.php [L]
+RewriteRule ^(.*)\.ts$ $1.php [L]
+RewriteRule ^(.*)\.mp4$ $1.php [L]
+
+Options All -Indexes
+
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^(.+)$ $1.php [L]
