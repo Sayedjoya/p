@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Home | RedLineTV By UsefulToolsHUB</title>
+<title>Home | aki live</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap" rel="stylesheet" />
 <link rel="shortcut icon" href="https://www.youtube.com/s/desktop/fc793d5a/img/favicon.ico"/>
@@ -36,7 +36,7 @@ body { background-color: #000000; font-family: 'Open Sans', sans-serif; }
 </div>
 
 <div class="fire_head">
-    <img src="logo.png" width="35" height="35" alt=""/>&nbsp;&nbsp;&nbsp;&nbsp;<span id="fireTxtLogo">REDLINE TV</span>
+    <img src="logo.png" width="35" height="35" alt=""/>&nbsp;&nbsp;&nbsp;&nbsp;<span id="fireTxtLogo">AKI TV</span>
     <div id="open_settings" style="float: right;"><button class="btn btn-light btn-sm"> Settings </button></div>
 </div>
 
