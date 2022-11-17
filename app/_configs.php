@@ -3,7 +3,7 @@
 $ALLOW_CROSS_DOMAIN_STREAMING = "yes"; //Possible Values - "yes" or "no"
 $ENABLE_CROSS_DOMAIN_REQUEST = "yes"; //Possible Values - "yes" or "no"
 $RDC_USERAGENT = "REDLINECLIENT"; // useragent is changeable
-$RDC_TOKEN = "RED_7dIUw8ANGjCvIxcOHt0C7w%3D%3D%2C165788705960,".exptoken().".9659699029"; // token is also changeable
+$RDC_TOKEN = "RED_ZioASSUAhY3_ndrs2wP6vA==,".exptoken().".9253365974"; // token is also changeable
 
 $CHANNEL_LIST = array();
 
